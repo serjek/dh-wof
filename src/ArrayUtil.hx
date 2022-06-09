@@ -14,6 +14,6 @@ class ArrayUtil {
         return arr;
     }
     static inline function int(from:Int, to:Int):Int {
-		return from + Math.floor(((to - from + 1) * Math.random()));
-	}
+        return from + Math.floor(((to - from + 1) * Math.random()));
+    }
 }
