@@ -1,0 +1,34 @@
+.root {
+    justify-content: center;
+    display: flex;
+}
+
+.wheel_container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.wheel_pointer {
+    position: relative;
+    top: -535px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid slategrey;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
+.wheel {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    margin: 24px;
+}
+
+.wheel_label {
+    position: relative;
+    filter: drop-shadow(2px 4px 14px black) opacity(0.9);
+}

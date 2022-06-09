@@ -1,0 +1,19 @@
+# OSX
+.DS_Store
+
+# haxe
+bin/index.js
+
+# node.js
+.node-version
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# vscode
+.vscode/
+app.code-workspace
+
+# parcel
+dist/
+.cache/

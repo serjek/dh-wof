@@ -1,0 +1,6 @@
+# @install: lix --silent download "gh://github.com/MVCoconut/coconut.react-dom#72f3f18f8a8804c289f9b0f09dbdff2403f642f2" into coconut.react-dom/0.3.0/github/72f3f18f8a8804c289f9b0f09dbdff2403f642f2
+-lib coconut.react-core
+-lib tink_domspec
+-cp ${HAXE_LIBCACHE}/coconut.react-dom/0.3.0/github/72f3f18f8a8804c289f9b0f09dbdff2403f642f2/src
+-D coconut.react-dom=0.3.0
+--macro coconut.react.Html.registerTags()
