@@ -40,7 +40,7 @@ class WOFView extends View {
         var bgStyle = config.map(v -> {
             var ind = config.indexOf(v);
             var deg = ind * 360 / config.length;
-            '${shuffledColors[ind]} 0% ${100*(ind+1)/config.length}%';
+            '${shuffledColors[ind%10]} 0% ${100*(ind+1)/config.length}%';
         }).toArray().toString();
         {
             background: 'radial-gradient(white calc(20% - 1px), transparent 20%), conic-gradient(from 0deg, $bgStyle)',
@@ -97,13 +97,13 @@ class WOFView extends View {
                 <div class = "wheel" style = $segmentStyle>
                     <for ${item in config}>
                         <div class = "wheel_label" style = ${segmentLabelStyle(config.indexOf(item),item.name.length)}>
-                            <Typography variant=${H6} style = ${{color:"white", "inline-size":"max-content"}}>${item.name}</Typography>
+                            <Typography variant=${H6} style = ${cast {color:"white", inlineSize:"max-content"}}>${item.name}</Typography>
                         </div>
                     </for>
                 </div>
             </div>
             <div class = "wheel_pointer" />
-            <Button variant=${Outlined} disabled = {isSpinning} onClick = ${onSpin}>${winner.match(None) ? "I'm feeling lucky!" : "Spin again"}</Button>
+            <Button variant=${Outlined} disabled = {isSpinning || config.length <= 1} onClick = ${onSpin}>${winner.match(None) ? "I'm feeling lucky!" : "Spin again"}</Button>
         </div>
     ;
 }
