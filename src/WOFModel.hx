@@ -10,12 +10,13 @@ class WOFModel implements coconut.data.Model {
         {name: "D", chance: 50},
         {name: "E", chance: 1}
     ];
-    @:constant var baseConfig:Vector<Participant> = switch js.Cookie.get("config") {
-        case null: defaultConfig;
-        case v: try (tink.Json.parse(v):Vector<Participant>) catch(e) {
-            defaultConfig;
-        }
-    };
+    @:constant var baseConfig:Vector<Participant> = {
+        //apparently querystring can not be encoded/decoded as array; array needs to be a property of something else
+        switch tink.QueryString.parse((js.Browser.location.href.split("?")[1]:{a:Array<Participant>})) {
+            case Success(v): Vector.fromArray(v.a);
+            case Failure(e): trace(e); defaultConfig;
+        };
+    }
 
     @:computed var isSpinning:Bool = primedFor.match(Some(_));
     @:observable var primedFor:Option<Participant> = None;

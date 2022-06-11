@@ -6,3 +6,4 @@
 --library coconut.react-dom
 --library material-ui
 --library tink_json
+--library tink_querystring
