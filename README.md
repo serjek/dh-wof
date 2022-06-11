@@ -13,10 +13,8 @@ yarn parcel bin/index.html
 ```
 
 ## Set values
-Custom values are coming from cookie "config" that is stringified JSON of `Array<{name:String, chance:Int}>` where chance value is recommended between 0 and 100. Note, it is not exact percentage of win but used to compute relative win probability for every participant (see `WOFModel.rollItem` for implementation):
+Custom values are coming from query string that is encoded `Array<{name:String, chance:Int}>` where chance value is recommended between 0 and 100. Note, it is not exact percentage of win but used to compute relative win probability for every participant (see `WOFModel.rollItem` for implementation):
 
-```js
-document.cookie = 'config=[{"name": "Mr. White", "chance": 1},{"name": "Mr. Orange", "chance": 50},{"name": "Mr. Blonde", "chance": 50},{"name": "Mr. Pink", "chance": 50},{"name": "Mr. Brown", "chance": 1},{"name": "Mr. Blue", "chance": 20}]'
 ```
-
-
+?a[0].chance=1&a[0].name=Mr.%20White&a[1].chance=50&a[1].name=Mr.%20Orange&a[2].chance=50&a[2].name=Mr.%20Blonde&a[3].chance=50&a[3].name=Mr.%20Pink&a[4].chance=1&a[4].name=Mr.%20Brown&a[5].chance=50&a[5].name=Mr.%20Blue
+```
